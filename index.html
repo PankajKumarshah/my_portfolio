@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio | Pankaj</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Hi, I'm <span class="highlight">Pankaj</span></h1>
+      <p class="tagline">Engineering Student Specialized in CSE</p>
+      <a href="#projects" class="cta-button">View My Work</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="container section">
+    <h2 class="section-title">About Me</h2>
+    <img src="img/pankaj.png" alt="Pankaj" class="profile-pic" />
+    <p>I'm a final-year student at Dhanekula Institute of Engineering and Technology, passionate about Web Development and Machine Learning. I enjoy playing cricket and building creative projects.</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="container section">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-gallery">
+      <div class="project-card">
+        <img src="img/IMG20240306130828.jpg" alt="Project 1" />
+        <h3>LPG Gas detection using Arduino</h3>
+        <p>Responsive gas detection leakage using Arduino C language, Arduino Uno, MQ-2 gas sensor,Buzzer, Led, Motor fan .</p>
+      </div>
+      <div class="project-card">
+        <img src="img/image.png" alt="Project 2" />
+        <h3>AI using face recorgnization</h3>
+        <p>Responsive face recorgnization using python, libraries, database, our laptop </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="container section">
+    <h2 class="section-title">Skills</h2>
+    <ul class="skills-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>C</li>
+      <li>Database</li>
+      <li>github</li>
+      <li>CPP</li>
+      <li>java</li>
+      <li>Python</li>
+      <li>React.js</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container section">
+    <h2 class="section-title">Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" name="from_name" placeholder="Your Name" required />
+      <input type="email" name="email_id" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <p id="form-message"></p>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/pankaj-kumar-shah-656126268" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/PankajKumarshah" target="_blank">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+        </a>
+        <a href="https://instagram.com/pankaj____143_18/" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+        </a>
+        <a href="https://www.facebook.com/share/15eDfdVk7Q/" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook" />
+        </a>
+      </div>
+      <p>&copy; 2024 Pankaj | Designed with ❤️</p>
+    </div>
+  </footer>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("uCumw4heHN6KXmuDV"); // replace this with your actual public key
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      emailjs.sendForm("service_082xoig", "template_ldtuiqt", this)
+        .then(() => {
+          document.getElementById("form-message").textContent = "Message sent successfully!";
+          this.reset();
+        }, (error) => {
+          document.getElementById("form-message").textContent = "Failed to send message.";
+          console.error(error);
+        });
+    });
+  </script>
+</body>
+</html>
